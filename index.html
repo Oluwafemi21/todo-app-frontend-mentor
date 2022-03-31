@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Todo app</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo</h1>
+      <img src="images/icon-moon.svg" alt="light-theme">
+    </header>
+
+    
+    <!-- Add Todo -->
+    <form class="input-box">
+      <div class="circle">
+      </div>
+      <input type="text" name="add"  class="add" placeholder="Create a new todo...">
+    </form>
+
+    <!-- Add Todo End -->
+    <!-- Todo Area -->
+    <div class="todo-container">
+      <p class="error">You have no todos completed</p>
+      <ul class="todos"> 
+        <li class="todo-item">
+          <div class="check-box">
+            <img src="images/icon-check.svg" alt="check-box">
+          </div>
+          <p class="text delete">Complete online Javascript course</p>
+          <img class="icon-x"src="images/icon-cross.svg" alt="delete todo">
+        </li>
+        <li class="todo-item">
+          <div class="check-box">
+            <img src="images/icon-check.svg" alt="check-box">
+          </div>
+          <p class="text delete">Jog around the park 3x</p>
+          <img class="icon-x" src="images/icon-cross.svg" alt="delete todo">
+        </li>
+        <li class="todo-item">
+          <div class="check-box">
+            <img src="images/icon-check.svg" alt="check-box">
+          </div>
+          <p class="text delete">10 minutes meditation</p>
+          <img class="icon-x" src="images/icon-cross.svg" alt="delete todo">
+        </li>
+        <li class="todo-item">
+          <div class="check-box">
+            <img src="images/icon-check.svg" alt="check-box">
+          </div>
+          <p class="text delete">Read for 1 hour</p>
+          <img class="icon-x" src="images/icon-cross.svg" alt="delete todo">
+        </li>
+        <li class="todo-item">
+          <div class="check-box">
+            <img src="images/icon-check.svg" alt="check-box">
+          </div>
+          <p class="text delete">Pick up groceries</p>
+          <img class="icon-x" src="images/icon-cross.svg" alt="delete todo">
+        </li>
+        <li class="todo-item">
+          <div class="check-box">
+            <img src="images/icon-check.svg" alt="check-box">
+          </div>
+          <p class="text delete">Complete Todo App on Frontend Mentor</p>
+          <img class="icon-x" src="images/icon-cross.svg" alt="delete todo">
+        </li>
+      </ul>
+      
+      <div class="todo-information">
+        <p><span class="counter">0</span> items left</p>
+
+        <div class="btns">
+          <button class="activeBtn">All</button>          
+          <button>Active</button>      
+          <button>Completed</button>    
+        </div>
+
+        <button class="delete-all">Clear Completed</button>
+      </div>
+    </div>
+    <!-- Todo Area End -->
+
+  </div>
+  <footer>
+    <p class="last-para">Drag and drop to reorder list</p>
+ <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Oluwafemi Olukoya</a>.
+  </div> 
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
