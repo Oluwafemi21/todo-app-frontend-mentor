@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:100,200,300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic"); 
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:100,200,300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic");
+
 :root {
   /* Light Theme */
   --very-light-gray: hsl(0, 0%, 98%);
@@ -6,18 +7,18 @@
   --light-grayish-blue: hsl(233, 11%, 84%);
   --dark-grayish-blue: hsl(236, 9%, 61%);
   --very-dark-grayish-blue: hsl(235, 19%, 35%);
-  --bright-blue:hsl(220, 98%, 61%);
+  --bright-blue: hsl(220, 98%, 61%);
   --check-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
 
-/* Dark theme */
---very-dark-blue: hsl(235, 21%, 11%);
---very-dark-desaturated-blue: hsl(235, 24%, 19%);
---light-grayish-blue: hsl(234, 39%, 85%);
---light-grayish-blue-hover: hsl(236, 33%, 92%);
---dark-grayish-blue: hsl(234, 11%, 52%);
---very-dark-grayish-blue: hsl(233, 14%, 35%);
---very-dark-grayish-blue: hsl(237, 14%, 26%);
+  /* Dark theme */
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue: hsl(237, 14%, 26%);
 }
 
 * {
@@ -33,6 +34,7 @@ body {
   padding: 50px 0 0;
   background-color: var(--very-light-grayish-blue);
   min-height: 100vh;
+  transition: all 0.3s ease-in-out;
 }
 
 .container {
@@ -59,18 +61,19 @@ header h1 {
   font-size: 2em;
 }
 
-header img{
-    cursor: pointer;
+header img {
+  cursor: pointer;
 }
 
 /* Chexbox start */
-.circle{
-    width: 21px;
-    height: 20px;
-    border-radius: 35px;
-    border: 1px solid var(--light-grayish-blue);
-  
+.circle {
+  width: 21px;
+  height: 20px;
+  border-radius: 35px;
+  border: 1px solid var(--light-grayish-blue);
+
 }
+
 .check-box {
   width: 23px;
   height: 20px;
@@ -83,22 +86,24 @@ header img{
   cursor: pointer;
 }
 
-.checked{
-    border: none;
-    background: var(--check-bg);
+.checked {
+  border: none;
+  background: var(--check-bg);
 }
 
-.todo-item.completed{
-    text-decoration: line-through;
-    color: var(--light-grayish-blue);
+.todo-item.completed {
+  text-decoration: line-through;
+  color: var(--light-grayish-blue);
 }
+
 .check-box img {
   pointer-events: none;
 }
 
-.check-box:hover{
-    border-color: var(--check-bg);
+.check-box:hover {
+  border-color: var(--check-bg);
 }
+
 /* Chexbox end */
 
 /* Input Todo start */
@@ -120,6 +125,10 @@ header img{
   color: var(--very-dark-grayish-blue);
 }
 
+.add::placeholder{
+  color: var(--dark-grayish-blue) ;
+}
+
 /* Input Todo end */
 
 /* Todos */
@@ -127,6 +136,7 @@ header img{
   background-color: white;
   border-radius: 4px;
   list-style: none;
+  margin-bottom: 30px;
   min-height: auto;
   box-shadow: 0 4px 17px -4px var(--dark-grayish-blue);
 }
@@ -139,131 +149,212 @@ header img{
   justify-content: space-between;
   gap: 15px;
   padding: 15px 20px;
-  border-bottom: 1px solid  var(--light-grayish-blue);
+  border-bottom: 1px solid var(--light-grayish-blue);
 }
 
 .text {
-    width: 100%;
+  width: 100%;
   cursor: pointer;
 }
 
-.text:hover ~ .icon-x{
-    visibility: visible;
+.text:hover~.icon-x {
+  visibility: visible;
 }
 
-.icon-x{
-    visibility: hidden;
-    cursor: pointer;
-    transition: visibility 0.25s ease-in-out;
+.icon-x {
+  visibility: hidden;
+  cursor: pointer;
+  transition: visibility 0.25s ease-in-out;
 }
 
-.todo-information{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-   padding: 0 20px;
+.todo-information {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
-.todo-information p{
-    font-size: 14px;
-    color: var(--dark-grayish-blue);
+.todo-information p,
+.counter {
+  font-size: 14px;
+  color: var(--dark-grayish-blue);
+  font-weight: 700;
 }
 
-button{
-    padding: 15px 10px;
-    font-size: 15px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    font-weight: 700;
-    color:var(--dark-grayish-blue) ;
+button {
+  padding: 15px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-weight: 700;
+  color: var(--dark-grayish-blue);
 }
 
-button:hover{
-    color: var(--very-dark-grayish-blue);
+button:hover {
+  color: var(--very-dark-grayish-blue);
 }
 
-.btns{
-    display: flex;
+.btns {
+  display: flex;
 }
 
-.activeBtn{
-    color:var(--bright-blue) ;
+.activeBtn {
+  color: var(--bright-blue);
 }
 
 
-.error{
-    padding: 15px 0;
-    text-align: center;
-    font-size: 20px;
-    border-bottom: 1px solid  var(--light-grayish-blue);
-    color: rgb(209, 44, 44);
-    display: none;
+.error {
+  padding: 15px 0;
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1px solid var(--light-grayish-blue);
+  color: rgb(209, 44, 44);
+  display: none;
 }
 
 /* Todos End */
 
-footer{
-    margin: 30px 0 0;
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
+footer {
+  margin: 40px 0 0;
 }
-.last-para{
-    text-align: center;
-    color: var(--dark-grayish-blue);
-    font-size: 15px;
-    padding-bottom: 30px;
-    font-weight: 700;
+
+.last-para {
+  text-align: center;
+  color: var(--dark-grayish-blue);
+  font-size: 15px;
+  padding-bottom: 30px;
+  font-weight: 700;
 }
 
 .attribution {
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
+.hidden{
+  display: none;
+}
 
-@media (max-width:900px){
-    .container{
-        width: 85%;
-        padding-bottom: 50px;
-    }
-    .icon-x{
-        visibility: visible;;
-    }
+#light{
+  display: none;
+}
 
-    .check-box{
-        width: 24px;
-    }
-    .todos{
-        overflow-y:hidden !important;
-    }
-    .todo-information{
-        flex-wrap: wrap;
-        position: relative;
-    }
-    .todo-item{
-        gap: 10px;
-    }
-    .text{
-        font-size: 13px;
-    }
+@media (max-width:900px) {
 
-    .btns{
-        position: absolute;
-        justify-content: center;
-        background-color: white;
-        border-radius: 4px;
-        order: 3;
-        top: 68px;
-        left: 0;
-        width: 100%;
-    }
-    footer{
-        position: relative;
-        margin: 50px 0 30px;
-    }
+  .container {
+    width: 85%;
+    padding-bottom: 50px;
+  }
+
+  .icon-x {
+    visibility: visible;
+    ;
+  }
+
+  .check-box {
+    width: 24px;
+  }
+
+  .todo-information {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .todo-item {
+    gap: 10px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+  .btns {
+    position: absolute;
+    justify-content: center;
+    background-color: white;
+    border-radius: 4px;
+    order: 3;
+    top: 68px;
+    left: 0;
+    width: 100%;
+  }
+
+  footer {
+    position: relative;
+    margin: 50px 0 30px;
+  }
+
+  .dark .btns{
+    background-color: var(--very-dark-grayish-blue);
+  }
+}
+
+@media (max-width:375px) {
+  body {
+    background: url("images/bg-mobile-light.jpg") no-repeat;
+    background-color: var(--very-light-grayish-blue);
+  }
+}
+
+/* Dark Theme */
+.dark{
+  background: url('images/bg-desktop-dark.jpg') no-repeat;
+  background-color: var(--very-dark-blue);
+}
+
+.dark .check-box, .dark .circle{
+  border: 1px solid var(--dark-grayish-blue);
+}
+
+.dark .input-box,.dark .todo-container{
+  background-color: var(--very-dark-grayish-blue);
+}
+
+.dark .todo-container{
+  box-shadow: none;
+}
+
+.dark .add, .dark .todo-item{
+  color: var(--light-grayish-blue);
+}
+
+.dark .add::placeholder{
+  color:var(--dark-grayish-blue);
+}
+
+.dark .todo-item.completed{
+  color: var(--dark-grayish-blue);
+}
+
+.dark .check-box img{
+  display: none;
+}
+
+.dark .check-box.checked img{
+  display: block;
+}
+
+.dark button:hover{
+  color: var(--light-grayish-blue-hover);
+}
+
+.dark .attribution{
+  color: var(--light-grayish-blue);
+}
+
+.dark .todo-item, .dark .error{
+  border-bottom: 1px solid var(--dark-grayish-blue);
+}
+
+/* If in dark mode by mobile preference show sun hide moon */
+.dark #dark{
+  display: none;
+}
+
+.dark #light{
+  display: block;
 }

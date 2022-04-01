@@ -5,8 +5,11 @@ const counter = document.querySelector('.counter');
 const btns = document.querySelector('.btns');
 const tabs = Array.from(btns.children);
 const deleteAllBtn = todos.parentElement.lastElementChild;
+const toggle = document.querySelector('header');
+
 
 // AddEvent Listeners
+toggle.addEventListener('click', toggleTheme);
 inputTodo.addEventListener('submit', addTodo);
 todos.addEventListener('click', deleteCheck);
 btns.addEventListener('click', filterTodo);
@@ -21,6 +24,19 @@ tabs.forEach(btn => {
 
 
 // Function
+// Change Theme
+function toggleTheme(e){
+    const theme = e.target.id;
+    const body = document.querySelector('body')
+    switch(theme){
+        case "dark":
+            body.classList.add('dark');
+            break;
+        case "light":
+            body.classList.remove('dark');
+    }
+}
+
 // Add Todo
 function addTodo(e) {
     e.preventDefault();
@@ -40,8 +56,8 @@ function newTodo(todo) {
         <div class="check-box">
             <img src="images/icon-check.svg" alt="check-box">
         </div>
-        <p class="text">${todo}</p>
-        <img class="delete" src="images/icon-cross.svg" alt="delete todo">
+        <p class="text delete">${todo}</p>
+        <img class="icon-x" src="images/icon-cross.svg" alt="delete todo">
     </li>`
 
     todos.innerHTML += html;
@@ -50,7 +66,7 @@ function newTodo(todo) {
 //Update the counter
 counter.textContent = todos.childElementCount;
 
-
+// Complete Todo or Delete Todo
 function deleteCheck(e) {
     if (e.target.classList.contains('check-box')) {
         e.target.parentElement.classList.toggle('completed')
@@ -61,6 +77,7 @@ function deleteCheck(e) {
     }
 }
 
+// Filter Todo
 function filterTodo(e) {
     const filteredTodo = Array.from(todos.children);
     switch (e.target.textContent.toLowerCase()) {
@@ -101,6 +118,7 @@ function filterTodo(e) {
     }
 }
 
+// Clear all completed todo
 function deleteAll(e){
     const removeTodos = Array.from(todos.children);
     if(e.target.classList.contains('delete-all')){
@@ -108,6 +126,12 @@ function deleteAll(e){
         .map(todo => todo.remove());   
         //Update the counter
         counter.textContent = todos.childElementCount;
+        if(tabs[2].classList.contains('activeBtn')){
+            todos.parentElement.firstElementChild.style.display = "block";
+        } else{
+            todos.parentElement.firstElementChild.style.display = "none";
+        }
     }
 }
+
 
