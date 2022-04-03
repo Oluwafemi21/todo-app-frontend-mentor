@@ -374,11 +374,21 @@ footer {
     background: url("images/bg-mobile-light.jpg") no-repeat;
     background-color: var(--very-light-grayish-blue);
   }
+<<<<<<< HEAD
 
   .dark{
     background: url('images/bg-mobile-dark.jpg') no-repeat;
     background-color: var(--very-dark-blue);
   }
+=======
+  .dark{
+
+  background: url('images/bg-mobile-dark.jpg') no-repeat;
+
+  background-color: var(--very-dark-blue);
+
+}
+>>>>>>> cb4d376308d887e09a7794f5810a85e9cd4ee429
 }
 
 
@@ -387,6 +397,61 @@ footer {
   box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
 }
 
+<<<<<<< HEAD
 .sortable-drag{
   opacity: 0;
 }
+=======
+.dark .check-box, .dark .circle{
+  border: 1px solid var(--dark-grayish-blue);
+}
+
+.dark .input-box,.dark .todo-container{
+  background-color: var(--very-dark-grayish-blue);
+}
+
+.dark .todo-container{
+  box-shadow: none;
+}
+
+.dark .add, .dark .todo-item{
+  color: var(--light-grayish-blue);
+}
+
+.dark .add::placeholder{
+  color:var(--dark-grayish-blue);
+}
+
+.dark .todo-item.completed{
+  color: var(--dark-grayish-blue);
+}
+
+.dark .check-box img{
+  display: none;
+}
+
+.dark .check-box.checked img{
+  display: block;
+}
+
+.dark button:hover{
+  color: var(--light-grayish-blue-hover);
+}
+
+.dark .attribution{
+  color: var(--light-grayish-blue);
+}
+
+.dark .todo-item, .dark .error{
+  border-bottom: 1px solid var(--dark-grayish-blue);
+}
+
+/* If in dark mode by mobile preference show sun hide moon */
+.dark #dark{
+  display: none;
+}
+
+.dark #light{
+  display: block;
+}
+>>>>>>> cb4d376308d887e09a7794f5810a85e9cd4ee429
