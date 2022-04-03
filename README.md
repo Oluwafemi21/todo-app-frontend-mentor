@@ -93,6 +93,6 @@ new Sortable(sortItems, {
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Oluwafemi21)
-- Twitter - [@yourusername](https://www.twitter.com/femi_io)
+- Frontend Mentor - [@Oluwafemi21](https://www.frontendmentor.io/profile/Oluwafemi21)
+- Twitter - [@femi_io](https://www.twitter.com/femi_io)
 
