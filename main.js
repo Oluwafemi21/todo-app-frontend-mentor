@@ -22,7 +22,6 @@ tabs.forEach(btn => {
 });
 
 
-
 // Function
 // Change Theme
 function toggleTheme(e){
@@ -54,10 +53,12 @@ function newTodo(todo) {
     html = `
     <li class="todo-item">
         <div class="check-box">
-            <img src="images/icon-check.svg" alt="check-box">
+            <div class="check-box-inner">
+                <img src="images/icon-check.svg" alt="check-box">
+            </div>
         </div>
-        <p class="text delete">${todo}</p>
-        <img class="icon-x" src="images/icon-cross.svg" alt="delete todo">
+        <p class="text">${todo}</p>
+        <img class="delete" src="images/icon-cross.svg" alt="delete todo">
     </li>`
 
     todos.innerHTML += html;
@@ -69,10 +70,10 @@ counter.textContent = todos.childElementCount;
 // Complete Todo or Delete Todo
 function deleteCheck(e) {
     if (e.target.classList.contains('check-box')) {
-        e.target.parentElement.classList.toggle('completed')
-        e.target.classList.toggle('checked');
+        e.target.parentElement.classList.toggle('completed');
+        e.target.firstElementChild.classList.toggle('checked');
     } else if (e.target.classList.contains('delete')) {
-        e.target.parentElement.remove();
+        e.path[2].remove();
         counter.textContent = todos.childElementCount;
     }
 }
@@ -121,17 +122,29 @@ function filterTodo(e) {
 // Clear all completed todo
 function deleteAll(e){
     const removeTodos = Array.from(todos.children);
+    let arr4 = removeTodos.filter(todo => todo.classList.contains('!completed'));
+    let arr3 = removeTodos.filter(todo => todo.classList.contains('completed'));
     if(e.target.classList.contains('delete-all')){
-        removeTodos.filter(todo => todo.classList.contains('completed'))
-        .map(todo => todo.remove());   
-        //Update the counter
-        counter.textContent = todos.childElementCount;
+        arr3.map(todo => todo.remove());   
+        
         if(tabs[2].classList.contains('activeBtn')){
             todos.parentElement.firstElementChild.style.display = "block";
+            // Update todos
+            counter.textContent = arr4.length;
         } else{
             todos.parentElement.firstElementChild.style.display = "none";
         }
     }
+ 
 }
 
 
+
+// DRAG AND DROP //
+const sortItems = document.querySelector('#items');
+
+new Sortable(sortItems, {
+    animation: 150,
+    chosenClass: "sortable-chosen",
+    dragClass: "sortable-drag"
+});

@@ -77,18 +77,31 @@ header img {
 .check-box {
   width: 23px;
   height: 20px;
-  border-radius: 35px;
-  border: 1px solid var(--light-grayish-blue);
+  border-radius: 50%;
+  background-color:  var(--light-grayish-blue);
+  cursor: pointer;
+  padding: 1px;
+  transition: background-image 0.25s;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+}
+
+.check-box-inner{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .checked {
-  border: none;
   background: var(--check-bg);
+  border: none;
 }
 
 .todo-item.completed {
@@ -101,7 +114,7 @@ header img {
 }
 
 .check-box:hover {
-  border-color: var(--check-bg);
+  background-image: var(--check-bg);
 }
 
 /* Chexbox end */
@@ -153,15 +166,18 @@ header img {
 }
 
 .text {
-  width: 100%;
   cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.text:hover~.icon-x {
+.text:hover .delete {
   visibility: visible;
 }
 
-.icon-x {
+.delete{
   visibility: hidden;
   cursor: pointer;
   transition: visibility 0.25s ease-in-out;
@@ -243,6 +259,70 @@ footer {
   display: none;
 }
 
+
+/* Dark Theme */
+.dark{
+  background: url('images/bg-desktop-dark.jpg') no-repeat;
+  background-color: var(--very-dark-blue);
+}
+
+.dark .circle{
+  border: 1px solid var(--dark-grayish-blue);
+}
+
+.dark .check-box{
+  background-color:  var(--dark-grayish-blue);
+}
+
+.dark .input-box,.dark .todo-container,.dark .check-box-inner{
+  background-color: var(--very-dark-grayish-blue);
+}
+
+.dark .todo-container{
+  box-shadow: none;
+}
+
+.dark .add, .dark .todo-item{
+  color: var(--light-grayish-blue);
+}
+
+.dark .add::placeholder{
+  color:var(--dark-grayish-blue);
+}
+
+.dark .todo-item.completed{
+  color: var(--dark-grayish-blue);
+}
+
+.dark .check-box img{
+  display: none;
+}
+
+.dark .check-box-inner.checked img{
+  display: block;
+}
+
+.dark button:hover{
+  color: var(--light-grayish-blue-hover);
+}
+
+.dark .attribution{
+  color: var(--light-grayish-blue);
+}
+
+.dark .todo-item, .dark .error{
+  border-bottom: 1px solid var(--dark-grayish-blue);
+}
+
+/* If in dark mode by mobile preference show sun hide moon */
+.dark #dark{
+  display: none;
+}
+
+.dark #light{
+  display: block;
+}
+
 @media (max-width:900px) {
 
   .container {
@@ -250,13 +330,9 @@ footer {
     padding-bottom: 50px;
   }
 
-  .icon-x {
+  .delete{
     visibility: visible;
     ;
-  }
-
-  .check-box {
-    width: 24px;
   }
 
   .todo-information {
@@ -305,61 +381,12 @@ footer {
   }
 }
 
-/* Dark Theme */
-.dark{
-  background: url('images/bg-desktop-dark.jpg') no-repeat;
-  background-color: var(--very-dark-blue);
+
+/* Styles for drag and drop */
+.sortable-chosen{
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
 }
 
-.dark .check-box, .dark .circle{
-  border: 1px solid var(--dark-grayish-blue);
-}
-
-.dark .input-box,.dark .todo-container{
-  background-color: var(--very-dark-grayish-blue);
-}
-
-.dark .todo-container{
-  box-shadow: none;
-}
-
-.dark .add, .dark .todo-item{
-  color: var(--light-grayish-blue);
-}
-
-.dark .add::placeholder{
-  color:var(--dark-grayish-blue);
-}
-
-.dark .todo-item.completed{
-  color: var(--dark-grayish-blue);
-}
-
-.dark .check-box img{
-  display: none;
-}
-
-.dark .check-box.checked img{
-  display: block;
-}
-
-.dark button:hover{
-  color: var(--light-grayish-blue-hover);
-}
-
-.dark .attribution{
-  color: var(--light-grayish-blue);
-}
-
-.dark .todo-item, .dark .error{
-  border-bottom: 1px solid var(--dark-grayish-blue);
-}
-
-/* If in dark mode by mobile preference show sun hide moon */
-.dark #dark{
-  display: none;
-}
-
-.dark #light{
-  display: block;
+.sortable-drag{
+  opacity: 0;
 }
