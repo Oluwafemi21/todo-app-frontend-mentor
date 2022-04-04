@@ -34,12 +34,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Todo App](https://github.com/Oluwafemi21/todo-app-frontend-mentor)
+- Live Site URL: [Todo App](https://oluwafemi21.github.io/todo-app-frontend-mentor/)
 
 ## My process
 
@@ -93,6 +93,6 @@ new Sortable(sortItems, {
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Oluwafemi21)
-- Twitter - [@yourusername](https://www.twitter.com/femi_io)
+- Frontend Mentor - [@Oluwafemi21](https://www.frontendmentor.io/profile/Oluwafemi21)
+- Twitter - [@femi_io](https://www.twitter.com/femi_io)
 
