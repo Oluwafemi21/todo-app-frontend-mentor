@@ -25,7 +25,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
 }
 
@@ -61,10 +61,14 @@ header h1 {
   font-size: 2em;
 }
 
-header img {
+.theme-toggle img {
   cursor: pointer;
 }
 
+.theme-toggle{
+cursor: pointer;
+height: 50px;
+}
 /* Chexbox start */
 .circle {
   width: 21px;
@@ -161,7 +165,8 @@ header img {
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  padding: 15px 20px;
+  height: 50px;
+  padding: 0 20px;
   border-bottom: 1px solid var(--light-grayish-blue);
 }
 
@@ -251,9 +256,6 @@ footer {
   color: hsl(228, 45%, 44%);
 }
 
-.hidden{
-  display: none;
-}
 
 #light{
   display: none;
@@ -345,7 +347,7 @@ footer {
   }
 
   .text {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .btns {
@@ -374,13 +376,11 @@ footer {
     background: url("images/bg-mobile-light.jpg") no-repeat;
     background-color: var(--very-light-grayish-blue);
   }
-<<<<<<< HEAD
 
   .dark{
     background: url('images/bg-mobile-dark.jpg') no-repeat;
     background-color: var(--very-dark-blue);
   }
-=======
   .dark{
 
   background: url('images/bg-mobile-dark.jpg') no-repeat;
@@ -388,7 +388,6 @@ footer {
   background-color: var(--very-dark-blue);
 
 }
->>>>>>> cb4d376308d887e09a7794f5810a85e9cd4ee429
 }
 
 
@@ -397,11 +396,9 @@ footer {
   box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
 }
 
-<<<<<<< HEAD
 .sortable-drag{
   opacity: 0;
 }
-=======
 .dark .check-box, .dark .circle{
   border: 1px solid var(--dark-grayish-blue);
 }
@@ -454,4 +451,3 @@ footer {
 .dark #light{
   display: block;
 }
->>>>>>> cb4d376308d887e09a7794f5810a85e9cd4ee429

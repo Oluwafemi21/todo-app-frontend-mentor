@@ -5,7 +5,7 @@ const counter = document.querySelector('.counter');
 const btns = document.querySelector('.btns');
 const tabs = Array.from(btns.children);
 const deleteAllBtn = todos.parentElement.lastElementChild;
-const toggle = document.querySelector('header');
+const toggle = document.querySelector('.theme-toggle');
 
 
 // AddEvent Listeners

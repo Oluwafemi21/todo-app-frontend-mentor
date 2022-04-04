@@ -13,8 +13,10 @@
   <div class="container">
     <header>
       <h1>Todo</h1>
-      <img src="images/icon-moon.svg" alt="light-theme" id="dark">
-      <img src="images/icon-sun.svg" alt="dark-theme" id="light">
+      <button class="theme-toggle">
+        <img src="images/icon-moon.svg" alt="light-theme" id="dark">
+        <img src="images/icon-sun.svg" alt="dark-theme" id="light">
+      </button>
     </header>
 
     
@@ -27,9 +29,9 @@
 
     <!-- Add Todo End -->
     <!-- Todo Area -->
-    <div class="todo-container">
+    <main class="todo-container">
 
-      <p class="error">You have no todos completed</p>
+      <p class="error hidden">You have no todos completed</p>
 
       <ul class="todos" id="items"> 
         <li class="todo-item">
@@ -38,9 +40,9 @@
               <img src="images/icon-check.svg" alt="check-box">
             </div>
           </div>
-          <p class="text">Complete online Javascript course
+          <div class="text">Complete online Javascript course
             <img class="delete"src="images/icon-cross.svg" alt="delete todo">
-          </p>
+          </div>
           
         </li>
         <li class="todo-item">
@@ -49,9 +51,9 @@
               <img src="images/icon-check.svg" alt="check-box">
             </div>
           </div>
-          <p class="text">Jog around the park 3x
+          <div class="text">Jog around the park 3x
             <img class="delete" src="images/icon-cross.svg" alt="delete todo">
-          </p>
+          </div>
           
         </li>
         <li class="todo-item">
@@ -60,9 +62,9 @@
               <img src="images/icon-check.svg" alt="check-box">
             </div>
           </div>
-          <p class="text">10 minutes meditation
+          <div class="text">10 minutes meditation
             <img class="delete" src="images/icon-cross.svg" alt="delete todo">
-          </p>
+          </div>
           
         </li>
         <li class="todo-item">
@@ -71,9 +73,9 @@
               <img src="images/icon-check.svg" alt="check-box">
             </div>
           </div>
-          <p class="text">Read for 1 hour
+          <div class="text">Read for 1 hour
             <img class="delete" src="images/icon-cross.svg" alt="delete todo">
-          </p>
+          </div>
           
         </li>
         <li class="todo-item">
@@ -82,9 +84,9 @@
               <img src="images/icon-check.svg" alt="check-box">
             </div>
           </div>
-          <p class="text">Pick up groceries
+          <div class="text">Pick up groceries
             <img class="delete" src="images/icon-cross.svg" alt="delete todo">
-          </p>
+          </div>
           
         </li>
         <li class="todo-item">
@@ -93,9 +95,9 @@
               <img src="images/icon-check.svg" alt="check-box">
             </div>
           </div>
-          <p class="text">Complete Todo App on Frontend Mentor
+          <div class="text">Complete Todo App on Frontend Mentor
             <img class="delete" src="images/icon-cross.svg" alt="delete todo">
-          </p>
+          </div>
           
         </li>
       </ul>
@@ -111,7 +113,7 @@
 
         <button class="delete-all">Clear Completed</button>
       </div>
-    </div>
+    </main>
     <!-- Todo Area End -->
 
   </div>
