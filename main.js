@@ -141,10 +141,10 @@ function deleteAll(e){
 
 
 // DRAG AND DROP //
-const sortItems = document.querySelector('#items');
+// const sortItems = document.querySelector('#items');
 
-new Sortable(sortItems, {
-    animation: 150,
-    chosenClass: "sortable-chosen",
-    dragClass: "sortable-drag"
-});
+// new Sortable(sortItems, {
+//     animation: 150,
+//     chosenClass: "sortable-chosen",
+//     dragClass: "sortable-drag"
+// });
