@@ -6,6 +6,7 @@ const btns = document.querySelector('.btns');
 const tabs = Array.from(btns.children);
 const deleteAllBtn = todos.parentElement.lastElementChild;
 const toggle = document.querySelector('.theme-toggle');
+const body = document.body;
 
 
 // AddEvent Listeners
@@ -23,17 +24,41 @@ tabs.forEach(btn => {
 
 
 // Function
-// Change Theme
+
+// Create a key in localStorage for theme
+let darkMode = localStorage.getItem('darkMode');
+
+//Keep previous theme active
+if(darkMode === "enabled"){
+    enableDarkMode();
+}
+
+//Change Theme
 function toggleTheme(e){
     const theme = e.target.id;
-    const body = document.querySelector('body')
     switch(theme){
         case "dark":
-            body.classList.add('dark');
+            enableDarkMode();
             break;
         case "light":
-            body.classList.remove('dark');
+            disableDarkMode();
     }
+}
+
+//Enable Dark Mode
+function enableDarkMode(){
+    body.classList.add('dark');
+
+    //Update theme in local storage
+    darkMode = localStorage.setItem('darkMode','enabled');
+}
+
+//Disble Dark Mode
+function disableDarkMode(){
+    body.classList.remove('dark');
+
+    //Update theme in local storage
+    darkMode = localStorage.setItem('darkMode',null);
 }
 
 // Add Todo
@@ -140,11 +165,11 @@ function deleteAll(e){
 
 
 
-// DRAG AND DROP //
-// const sortItems = document.querySelector('#items');
+//DRAG AND DROP //
+const sortItems = document.querySelector('#items');
 
-// new Sortable(sortItems, {
-//     animation: 150,
-//     chosenClass: "sortable-chosen",
-//     dragClass: "sortable-drag"
-// });
+new Sortable(sortItems, {
+    animation: 150,
+    chosenClass: "sortable-chosen",
+    dragClass: "sortable-drag"
+});

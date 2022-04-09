@@ -405,15 +405,6 @@ footer {
 }
 }
 
-
-/* Styles for drag and drop */
-/* .sortable-chosen{
-  box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
-}
-
-.sortable-drag{
-  opacity: 0;
-} */
 .dark .check-box, .dark .circle{
   border: 1px solid var(--dark-grayish-blue);
 }
@@ -465,4 +456,13 @@ footer {
 
 .dark #light{
   display: block;
+}
+
+/* Styles for drag and drop */
+.sortable-chosen{
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
+}
+
+.sortable-drag{
+  opacity: 0;
 }
